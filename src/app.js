@@ -1,6 +1,5 @@
 const express = require("express");
 const cors = require("cors");
-require("dotenv").config();
 const {
   getPosts,
   deletePost,
@@ -11,7 +10,7 @@ const { error } = require("./middlewares/error-middleware");
 const connect = require("./mongodb/mongodb.connect");
 
 connect();
-const PORT = process.env.PORT || 8000;
+const PORT = 8080;
 const app = express();
 
 app.use(cors());
