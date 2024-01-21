@@ -10,7 +10,7 @@ const { error } = require("./middlewares/error-middleware");
 const connect = require("./mongodb/mongodb.connect");
 
 connect();
-const PORT = 8080;
+const PORT = process.env.PORT || 8000;
 const app = express();
 
 app.use(cors());

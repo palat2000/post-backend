@@ -3,14 +3,11 @@ const mongoose = require("mongoose");
 const connect = async () => {
   try {
     mongoose.set("strictQuery", false);
-    await mongoose.connect(
-      "mongodb+srv://pondza1985:pond1985@friendship.xfeonq1.mongodb.net/",
-      { useNewUrlParser: true }
-    );
+    await mongoose.connect(process.env.URI, { useNewUrlParser: true });
     console.log("Connected");
   } catch (err) {
     console.error("Error connecting to mongodb");
-    console.error(error);
+    console.error(err);
   }
 };
 
