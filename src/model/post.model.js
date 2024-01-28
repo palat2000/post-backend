@@ -17,6 +17,10 @@ const PostSchema = new mongoose.Schema({
     type: Date,
     required: true,
   },
+  comments: {
+    type: Array,
+    required: false,
+  },
 });
 
 const PostModel = mongoose.model("Post", PostSchema);
