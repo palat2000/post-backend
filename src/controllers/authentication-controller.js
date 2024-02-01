@@ -4,7 +4,7 @@ const getRandomColor = require("../service/randomColor");
 exports.register = async (req, res, next) => {
   try {
     const user = await AuthenticationModel.findOne({
-      username: req.body.username,
+      id: req.body.id,
     });
     if (user) {
       let error = new Error("This id is already used");
