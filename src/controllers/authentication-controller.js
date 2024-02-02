@@ -1,5 +1,4 @@
 const AuthenticationModel = require("../model/authentication.model");
-const getRandomColor = require("../service/randomColor");
 
 exports.register = async (req, res, next) => {
   try {
@@ -15,7 +14,6 @@ exports.register = async (req, res, next) => {
       id: req.body.id,
       name: req.body.name,
       password: req.body.password,
-      backgroundColor: getRandomColor(),
     };
     const newUser = await AuthenticationModel.create(registeredUser);
     delete newUser.password;

@@ -3,7 +3,7 @@ const { nanoid } = require("nanoid");
 
 exports.getPosts = async (req, res, next) => {
   try {
-    const posts = await PostModel.find({});
+    const posts = await PostModel.find().sort({ dateCreated: -1 });
     res.status(200).json(posts);
   } catch (err) {
     next(err);
