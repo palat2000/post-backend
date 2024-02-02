@@ -9,10 +9,6 @@ const authenticationSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  backgroundColor: {
-    type: String,
-    required: true,
-  },
   password: {
     type: String,
     required: true,
